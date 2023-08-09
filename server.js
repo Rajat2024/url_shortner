@@ -4,10 +4,11 @@ const ShortUrl = require('./models/shortUrl')
 const app = express()
 const dotenv = require('dotenv');
 dotenv.config(); 
+// mongo connected
 mongoose.connect(process.env.MONGO_URL, {
   useNewUrlParser: true, useUnifiedTopology: true
 })
-
+// to render ejs pages
 app.set('view engine', 'ejs')
 app.use(express.urlencoded({ extended: false }))
 
